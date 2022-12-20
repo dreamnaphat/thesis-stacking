@@ -3,19 +3,19 @@ version: '1.2'
 services:
   react:
     build: 
-      context: ./app-ui
+      context: ./research-Client
     ports:
       - "3000:3000"
     volumes:
-      - ./app-ui:/usr/src/app
+      - ./research-Client:/usr/src/app
 
   node:
     build: 
-      context: ./app-api
+      context: ./research-server
     ports:
       - "3001:3001"
     volumes:
-      - ./app-api:/usr/src/app
+      - ./research-server:/usr/src/app
 
   mysqldb:
     image: mysql:latest
