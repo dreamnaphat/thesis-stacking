@@ -3,10 +3,10 @@ version: '1.2'
 services:
   nextjs:
     build:
-      context: ./app
+      context: ./arunee-website
     ports:
       - 3000:3000
     volumes:
-      - ./app:/usr/src/app
+      - ./arunee-website:/usr/src/app
       - /usr/src/app/node_modules
   
