@@ -3,17 +3,17 @@ FROM node:16.17.1
 # Create app directory
 WORKDIR /usr/src/app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-COPY package*.json ./
-
-RUN npm install
+# Create app directory
+WORKDIR /usr/src/app
 
 # Bundle app source
 COPY . .
 
+# Install app dependencies
+RUN npm install
+
+# Build for production
 RUN npm run build
 
 EXPOSE 3000
-
 CMD [ "npm", "run", "start" ]
