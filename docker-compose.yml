@@ -1,28 +1,12 @@
 version: '1.2'
 
 services:
-  react:
-    build: 
-      context: ./research-Client
+  nextjs:
+    build:
+      context: ./app
     ports:
-      - "3000:3000"
+      - 3000:3000
     volumes:
-      - ./research-Client:/usr/src/app
-
-  node:
-    build: 
-      context: ./research-server
-    ports:
-      - "3001:3001"
-    volumes:
-      - ./research-server:/usr/src/app
-
-  mysqldb:
-    image: mysql:latest
-    environment:
-      - MYSQL_ROOT_PASSWORD: 123456
-    ports:
-      - "3306:3306"
-    volumes:
-      - ./mysql:/var/lib/mysql
+      - ./app:/usr/src/app
+      - /usr/src/app/node_modules
   
